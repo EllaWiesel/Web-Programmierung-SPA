@@ -4,11 +4,11 @@ import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class ProductSearchService {
-  private apiUrl = 'https://bff-webprogrammierung-6322597a0426.herokuapp.com/api/search';
+  private apiUrl = 'https://bff-webprogrammierung-6322597a0426.herokuapp.com/api/search?';
 
   constructor(private http: HttpClient) {}
 
   searchProducts(query: string): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl, { params: { query } });
+    return this.http.get<any[]>(this.apiUrl,  { params: { query } });
   }
 }

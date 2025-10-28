@@ -3,14 +3,14 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ProductSearchService } from './productsearch.service';
-
+import { FormsModule } from '@angular/forms';
 
 
 
 @Component({
   selector: 'an-productsearch',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './productsearch.component.html',
   styleUrl: './productsearch.component.css'
 })
