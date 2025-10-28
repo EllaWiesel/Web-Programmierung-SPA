@@ -1,0 +1,16 @@
+
+<h2>Suchergebnisse für "{{ query }}"</h2>
+
+<div *ngIf="products.length > 0; else noResults">
+  <div *ngFor="let product of products" class="product">
+    <img [src]="product.thumbnail" alt="{{product.title}}">
+    <h3>{{ product.title }}</h3>
+    <p>Preis: {{ product.price }} €</p>
+    <p>Bewertung: {{ product.rating }}</p>
+    <a [href]="product.link" target="_blank">Zum Produkt</a>
+  </div>
+</div>
+
+<ng-template #noResults>
+  <p>Keine Produkte gefunden.</p>
+</ng-template>

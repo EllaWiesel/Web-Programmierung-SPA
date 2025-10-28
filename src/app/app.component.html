@@ -1,22 +1,23 @@
 
-<h1>Mosbach Task Organizer</h1>
+<div class="containerBorder roundedCorners textFormatLarge" >
+  <p>Product-Search</p>
+</div>
 
-Here you can organise all your tasks. Please
-choose from the menu.
-<br />
-<br />
+<div class="containerBorder roundedCorners textFormatLarge">
+  <p>Here you can search for any product. Please type in the term of the products you are searching for.</p>
+</div>
 
-This super cool service was created by
-{{ author }} who will be {{ age + 1 }}
-years old next year.
-<br />
-<br />
-
-<a [routerLink]="['/LinkSignup']">Sign up</a>&nbsp;
-<a [routerLink]="['/LinkLogon']">Log on</a>&nbsp;
-<a [routerLink]="['/LinkLogoff']">Log off</a>&nbsp;
-<a [routerLink]="['/LinkTaskadd']">Add a task</a>&nbsp;
-<a [routerLink]="['/LinkTaskall']">See all tasks</a>
+<div class="containerBorder roundedCorners">
+ <span class="ContainerItem">
+   <form class="textFormatLarge">
+    <label for="query">ProductTerm:</label>
+     <br/><br/>
+     <input type="text" [(ngModel)]="searchTerm" placeholder="Enter search-term!" id="query" name="query" class="formatTextInput" required>
+     <br/><br/>
+     <a [routerLink]="['/LinkProductsearch']" [queryParams]="{ q: searchTerm }" id="submitBtn">Start searching...</a>
+   </form>
+ </span>
+</div>
 
 <router-outlet></router-outlet>
 

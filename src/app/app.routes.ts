@@ -4,11 +4,13 @@ import { TaskallComponent } from './taskall/taskall.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { UserlogoffComponent } from './userlogoff/userlogoff.component';
 import { UsersignupComponent } from './usersignup/usersignup.component';
+import { ProductsearchComponent } from './productSearch/productsearch.component';
 
 export const routes: Routes = [
   { path: 'LinkSignup', component: UsersignupComponent },
   { path: 'LinkLogon', component: UserloginComponent },
   { path: 'LinkLogoff', component: UserlogoffComponent },
   { path: 'LinkTaskadd', component: TaskaddComponent },
-  { path: 'LinkTaskall', component: TaskallComponent }
+  { path: 'LinkTaskall', component: TaskallComponent },
+  { path: 'LinkProductsearch', component: ProductsearchComponent }
 ];
