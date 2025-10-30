@@ -1,15 +1,41 @@
 
-<h2>Suchergebnisse für "{{ query }}"</h2>
+ <section class="productListBorder">
 
-<div *ngIf="products.length > 0; else noResults">
-  <div *ngFor="let product of products" class="product">
-    <img [src]="product.thumbnail" alt="{{product.title}}">
-    <h3>{{ product.title }}</h3>
-    <p>Preis: {{ product.price }} €</p>
-    <p>Bewertung: {{ product.rating }}</p>
-    <a [href]="product.link" target="_blank">Zum Produkt</a>
-  </div>
-</div>
+        <div class="productListItem textFormatLarge">
+            Search-Results for "{{ query }}"
+
+            <div id="sortOptions">
+                Sort option:
+                <select id="sort-options" name="sort-options">
+                        <option value="descending">Price descending</option>
+                        <option value="ascending">Price ascending</option>
+                        <option value="rating">Rating descending</option>
+                </select>
+
+            </div>
+
+        </div>
+
+        <div *ngIf="products.length > 0; else noResults">
+          <div *ngFor="let product of products" class="product">
+            <ul class="productListItem">
+              <span class="productHeaderSpan">
+                <li><img [src]="product.thumbnail" alt="{{ product.title }}"></img></li>
+                <li>{{ product.title }}</li>
+              </span>
+              <li><p>ASIN: {{product.asin }}</p></li>
+              <li><p>Price: {{ product.price }}€</p></li>
+              <li><p>Rating: {{ product.rating }}</p></li>
+              <span class="listButtons">
+                <li><button>Add to Wishlist</button></li>
+                <li><a [href]="product.link" target="_blank">Go to Amazon-Page</a></li>
+                <li><button>Look at Reviews</button></li>
+              </span>
+            </ul>
+          </div>
+        </div>
+        
+    </section>
 
 <ng-template #noResults>
   <p>Keine Produkte gefunden.</p>

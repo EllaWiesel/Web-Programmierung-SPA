@@ -7,6 +7,7 @@ body
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    
 }
 
 header
@@ -51,6 +52,16 @@ header
     #submitBtn {
         width: 90%;
     }
+    .productListBorder {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+    .productListItem p
+    {
+    margin-right: 16%;
+    }
+
 
 }
 
@@ -63,7 +74,7 @@ header
     padding: 10px;
     display: inline-block;
     background-color: white;
-    flex: 1
+    flex: 1;
 }
 
 .containerItem a
@@ -170,4 +181,110 @@ label
 ul
 {
     list-style-type:none;
+    margin-bottom: 20px;
+}
+
+.productListBorder
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    text-align: left;
+    width: 100%;
+    min-width: 200px;
+    max-width: 800px;
+    margin: 1.2em;
+}
+
+.productListItem
+{
+    margin: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 12px;
+    padding: 10px;
+    display: inline-block;
+    background-color: white;
+    flex: 1;
+    max-width: 700px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    width: 90%;
+}
+
+.productHeaderSpan
+{
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    
+}
+
+.productListItem img
+{
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 8px;
+}
+
+.productListItem li
+{
+    margin-bottom: 10px;
+}
+
+.productListItem p
+{
+    
+    margin-left: 36%;
+    font-size: large;
+}
+
+.listButtons a, .listButtons button
+{
+    
+    display: inline-block;       
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 10px;
+    text-decoration: none;
+    min-width: 150px;            
+    text-align: center; 
+    min-width: fit-content;
+}
+
+.listButtons
+{
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+}
+
+.listButtons a:hover, .listButtons button:hover
+{
+    background-color: #003d80;
+}
+
+#sortOptions
+{
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-top: 1em;
+}
+
+#sortOptions select
+{
+    font-size: 1.2rem;
+    border-radius: 10px;
+    color:white;
+    background-color: #0056b3;
 }
