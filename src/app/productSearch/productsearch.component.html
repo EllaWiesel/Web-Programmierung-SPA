@@ -27,9 +27,9 @@
               <li><p>Price: {{ product.price }}€</p></li>
               <li><p>Rating: {{ product.rating }}</p></li>
               <span class="listButtons">
-                <li><button>Add to Wishlist</button></li>
+                <li><button [id]="addWishlistBtn">Add to Wishlist</button></li>
                 <li><a [href]="product.link" target="_blank">Go to Amazon-Page</a></li>
-                <li><button>Look at Reviews</button></li>
+                <li><a [href]="'https://mpa-webprogrammierung-5831981c1a5b.herokuapp.com/public/review/seeReviews.html?asin=' + product.asin + '&token=' + token">See reviews</a></li>
               </span>
             </ul>
           </div>
