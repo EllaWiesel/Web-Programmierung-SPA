@@ -18,6 +18,7 @@ export class ProductsearchComponent implements OnInit{
 
   products: any[] = [];
   query: string = '';
+  successMessage: string = '';
 
   constructor(private route: ActivatedRoute, private productService: ProductSearchService) {}
 
