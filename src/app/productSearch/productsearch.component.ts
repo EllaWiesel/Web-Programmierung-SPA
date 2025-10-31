@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ProductSearchService } from './productsearch.service';
@@ -33,5 +33,42 @@ export class ProductsearchComponent implements OnInit{
     });
   }
 
+  
+  sortProducts(order: string) {
+    if (order === 'ascending') {
+      this.products.sort((a, b) => a.price - b.price);
+    } else {
+      this.products.sort((a, b) => b.price - a.price);
+    }
+  }
+
+  onSortChange(event: Event) {
+    const value = (event.target as HTMLSelectElement).value;
+    this.sortProducts(value);
+  }
+
+  addToWishlist(product:any):void {
+    const payload = {
+      asin: product.asin,
+      title: product.title,
+      price: product.price,
+      link: product.link
+    };
+
+    const wishlistUrl = 'https://bff-webprogrammierung-6322597a0426.herokuapp.com/api/wishlist';
+
+    this.productService.addToWishlist(wishlistUrl, payload).subscribe({
+      next: (response) => {
+        console.log('Produkt erfolgreich zur Wunschliste hinzugefügt:', response);
+        this.successMessage = `${product.title} wurde zur Wunschliste hinzugefügt.`;
+        setTimeout(() => this.successMessage = '', 3000);
+      },
+      error: (error) => {
+        console.error('Fehler beim Hinzufügen zur Wunschliste:', error);
+      }
+    });
+
+
+  }
 
 }

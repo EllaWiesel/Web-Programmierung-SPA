@@ -11,4 +11,10 @@ export class ProductSearchService {
   searchProducts(query: string): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl,  { params: { query } });
   }
+
+  
+  addToWishlist(url: string, product: any): Observable<any> {
+      return this.http.post<any>(url, product);
+    }
+
 }

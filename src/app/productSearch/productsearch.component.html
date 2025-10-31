@@ -6,10 +6,9 @@
 
             <div id="sortOptions">
                 Sort option:
-                <select id="sort-options" name="sort-options">
+                <select id="sort-options" name="sort-options" (change)="onSortChange($event)">
                         <option value="descending">Price descending</option>
                         <option value="ascending">Price ascending</option>
-                        <option value="rating">Rating descending</option>
                 </select>
 
             </div>
@@ -25,9 +24,8 @@
               </span>
               <li><p>ASIN: {{product.asin }}</p></li>
               <li><p>Price: {{ product.price }}€</p></li>
-              <li><p>Rating: {{ product.rating }}</p></li>
               <span class="listButtons">
-                <li><button id="addWishlistBtn">Add to Wishlist</button></li>
+                <li><button type="button" class="addWishlistBtn" (click)="addToWishlist(product)">Add to Wishlist</button></li>
                 <li><a [href]="product.link" target="_blank">Go to Amazon-Page</a></li>
                 <li><a [href]="'https://mpa-webprogrammierung-5831981c1a5b.herokuapp.com/public/review/SeeReviews.html?asin=' + product.asin">See reviews</a></li>
               </span>
