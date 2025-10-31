@@ -9,6 +9,8 @@ import { TaskService } from '../data/task-service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ProductsearchComponent } from './productSearch/productsearch.component';
+import { OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'an-root',
@@ -30,9 +32,18 @@ import { ProductsearchComponent } from './productSearch/productsearch.component'
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'tasksspa';
-  author = 'Michael Hartwig';
-  age = 25;
-
   searchTerm: string = '';
+
+  constructor(private route: ActivatedRoute) {}
+
+  ngOnInit(): void {
+      this.route.queryParams.subscribe(params => {
+        const token = params['token'];
+        if (token) {
+          localStorage.setItem('token', token);
+          console.log('Token gespeichert:', token);
+        }
+      });
+    }
+
 }

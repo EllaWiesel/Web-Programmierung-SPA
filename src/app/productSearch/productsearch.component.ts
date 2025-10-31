@@ -56,7 +56,7 @@ export class ProductsearchComponent implements OnInit{
       link: product.link
     };
 
-    const wishlistUrl = 'https://bff-webprogrammierung-6322597a0426.herokuapp.com/api/wishlist';
+    const wishlistUrl = 'https://bff-webprogrammierung-6322597a0426.herokuapp.com/api/wishlist?token=' + localStorage.getItem('token');
 
     this.productService.addToWishlist(wishlistUrl, payload).subscribe({
       next: (response) => {
