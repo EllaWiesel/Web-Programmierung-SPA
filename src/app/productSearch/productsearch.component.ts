@@ -50,10 +50,13 @@ export class ProductsearchComponent implements OnInit{
 
   addToWishlist(product:any):void {
     const payload = {
-      asin: product.asin,
+      thumbnail: product.thumbnail,
       title: product.title,
+      link: product.link,
       price: product.price,
-      link: product.link
+      rating: product.rating,
+      asin: product.asin,
+      user: localStorage.getItem('token')
     };
 
     const wishlistUrl = 'https://bff-webprogrammierung-6322597a0426.herokuapp.com/api/wishlist?token=' + localStorage.getItem('token');
