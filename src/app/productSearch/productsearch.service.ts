@@ -13,8 +13,8 @@ export class ProductSearchService {
   }
 
   
-  addToWishlist(url: string, product: any): Observable<any> {
-      return this.http.post<any>(url, product);
+  addToWishlist(url: string): Observable<any> {
+      return this.http.post<any>(url);
     }
 
 }
