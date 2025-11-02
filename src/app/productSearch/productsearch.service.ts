@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
@@ -14,7 +14,12 @@ export class ProductSearchService {
 
   
   addToWishlist(url: string): Observable<any> {
-      return this.http.post<any>(url, null);
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded'
+    });
+
+      return this.http.post<any>(url, null, { headers });
     }
 
 }
