@@ -14,7 +14,7 @@ export class ProductSearchService {
 
   
   addToWishlist(url: string): Observable<any> {
-      return this.http.post<any>(url);
+      return this.http.post<any>(url, null);
     }
 
 }
