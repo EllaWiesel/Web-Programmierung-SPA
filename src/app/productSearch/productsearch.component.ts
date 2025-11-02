@@ -59,9 +59,15 @@ export class ProductsearchComponent implements OnInit{
       user: localStorage.getItem('token')
     };
 
-    const wishlistUrl = 'https://bff-webprogrammierung-6322597a0426.herokuapp.com/api/wishlist?token=' + localStorage.getItem('token');
+    const wishlistUrl = 'https://bff-webprogrammierung-6322597a0426.herokuapp.com/api/wishlist?thumbnail='+ product.thumbnail + 
+                        '&title=' + product.title + 
+                        '&link=' + product.link + 
+                        '&price=' + product.price + 
+                        '&rating=' + product.rating +
+                        '&asin=' + product.asin + 
+                        '&user=' + product.user;
 
-    this.productService.addToWishlist(wishlistUrl, payload).subscribe({
+    this.productService.addToWishlist(wishlistUrl).subscribe({
       next: (response) => {
         console.log('Produkt erfolgreich zur Wunschliste hinzugefügt:', response);
         this.successMessage = `${product.title} wurde zur Wunschliste hinzugefügt.`;
