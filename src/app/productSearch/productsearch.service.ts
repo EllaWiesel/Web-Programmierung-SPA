@@ -16,7 +16,8 @@ export class ProductSearchService {
   addToWishlist(url: string): Observable<any> {
 
     const headers = new HttpHeaders({
-      'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/json'
+      //'Content-Type': 'application/x-www-form-urlencoded'
     });
 
       return this.http.post<any>(url, null, { headers });
