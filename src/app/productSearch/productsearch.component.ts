@@ -65,7 +65,7 @@ export class ProductsearchComponent implements OnInit{
                         '&price=' + product.price + 
                         '&rating=' + product.rating +
                         '&asin=' + product.asin + 
-                        '&user=' + product.user;
+                        '&user=' + localStorage.getItem('token');
 
     this.productService.addToWishlist(wishlistUrl).subscribe({
       next: (response) => {
